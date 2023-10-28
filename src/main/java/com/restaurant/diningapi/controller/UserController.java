@@ -15,7 +15,6 @@ public class UserController {
 
     @Autowired
     UserService userService;
-    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @GetMapping("/{userId}")
     public ResponseEntity<User> getUser(@PathVariable Long userId){

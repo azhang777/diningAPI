@@ -29,6 +29,8 @@ public class User {
     @Column(name = "zipcode")
     private int zipcode;
 
+    private boolean isRegistered;
+
     private boolean pnutAllerg;
 
     private boolean eggAllerg;
