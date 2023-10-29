@@ -11,17 +11,17 @@ import lombok.Data;
 public class Review {
     @Id
     @GeneratedValue
-    private long reviewId;
+    private Long reviewId;
     @Column(nullable = false)
     private String username;
     @Column(nullable = false)
     private long restuarantId;
-    @Column
+    @Column (name = "peanut_score")
     private int peanutScore;
-    @Column
+    @Column (name = "egg_score")
     private int eggScore;
-    @Column
+    @Column (name = "dairy_score")
     private int diaryScore;
-    @Column
+    @Column (name = "comment", nullable = false)
     private String comment;
 }
