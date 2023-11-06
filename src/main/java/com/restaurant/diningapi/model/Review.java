@@ -1,27 +1,29 @@
 package com.restaurant.diningapi.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
+@Table(name = "review")
 @Entity
 @Data
 public class Review {
     @Id
-    @GeneratedValue
-    private Long reviewId;
-    @Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "username", nullable = false)
     private String username;
-    @Column(nullable = false)
-    private long restuarantId;
+    @Column(name = "restaurantId", nullable = false)
+    private Long restaurantId;
     @Column (name = "peanut_score")
     private int peanutScore;
     @Column (name = "egg_score")
     private int eggScore;
     @Column (name = "dairy_score")
     private int diaryScore;
-    @Column (name = "comment", nullable = false)
+    @Column (name = "comment")
     private String comment;
+
+    private AdminReviewAction adminReviewAction;
 }

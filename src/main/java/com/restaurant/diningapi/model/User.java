@@ -2,13 +2,12 @@ package com.restaurant.diningapi.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
 import java.util.LinkedHashSet;
 
 @RequiredArgsConstructor
+@Table(name = "user")
 @Entity
 @Data
 public class User {
@@ -28,19 +27,10 @@ public class User {
     private String state;
     @Column(name = "zipcode")
     private int zipcode;
-
-    private boolean isRegistered;
-
-    private boolean pnutAllerg;
-
-    private boolean eggAllerg;
-
-    private boolean dairyAllerg;
-
-
-public User(String username){
-    this.username = username;
-}
-
-
+    @Column(name = "nut_allergy")
+    private boolean nutAllergy;
+    @Column(name = "egg_allergy")
+    private boolean eggAllergy;
+    @Column(name = "dairy_allergy")
+    private boolean dairyAllergy;
 }
